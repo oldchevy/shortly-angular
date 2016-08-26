@@ -1,3 +1,9 @@
-<div id='container'>
+<div id='container' ng-contoller='LinksController'>
+  
+  <ul>
+    <li ng-repeat='link in data.links'>{{ link }}</li>
+  </ul>
+
+  <pre>{{ data.links }}</pre>
   <!-- Your html here -->
 </div>
