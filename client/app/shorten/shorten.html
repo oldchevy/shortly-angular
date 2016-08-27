@@ -1,6 +1,6 @@
 <div id='container' ng-controller='ShortenController'>
   <form>
-    <input ng-model='newLink'/>
+    <input ng-class='{error: checkUrl(newLink), clean: !checkUrl(newLink)}' ng-model='newLink'/>
     <button ng-click='addLink(newLink)'>Submit</button>    
   </form>
 
