@@ -63,7 +63,9 @@ angular.module('shortly', [
     console.log('Route Change');
     console.log(next.$$route, next.$$route.authenticate, Auth.isAuth());
     if (next.$$route && !Auth.isAuth()) {
-      $location.path('/signin');
+      if (next.$$route.originalPath !== '/signup') {
+        $location.path('/signin');
+      }
     }
   });
 });
