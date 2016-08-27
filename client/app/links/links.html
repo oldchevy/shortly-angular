@@ -1,9 +1,11 @@
 <div id='container' ng-contoller='LinksController'>
-  
-  <ul>
-    <li ng-repeat='link in data.links'>{{ link }}</li>
-  </ul>
+  <!-- {"code":"e116e","url":"http://www.ASDASD.com","visits":1,"baseUrl":"http://localhost:3000","title":"http://www.ASDASD.com"} -->
+  <div class='link' ng-repeat='link in data.links'>
+    <span class='title'>{{ link.title }}</span>
+    <span class='original'>{{ link.url }}</span>
+    <span class='info'>{{ link.code }}</span>
+    <span class='visits'>{{ link.visits }}</span>
+  </div>
+    <!-- We want to structure our link instances like the old way, with visits, counts, title, orig url, shortened url -->
 
-  <pre>{{ data.links }}</pre>
-  <!-- Your html here -->
 </div>
