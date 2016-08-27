@@ -47,4 +47,23 @@ describe('ShortenController', function () {
     $scope.addLink();
     $httpBackend.flush();
   });
+
+  it('should have a checkUrl method', function() {
+    expect($scope.checkUrl).to.be.a('function');
+  });
+
+  it('checkUrl should return "Invalid Username" for a bad username', function() {
+    var tests = ['h', 'http://www.google.', '', 'mailto://asdffei@gmail.com'];
+    tests.forEach(function(name) {
+      expect($scope.checkUrl(name)).to.equal('Invalid URL');
+    });
+  });
+
+  it('should return a blank string for a valid URL', function() {
+    var tests = ['http://www.google.com', 'ftp://www.google.com'];
+    tests.forEach(function(name) {
+      expect($scope.checkUrl(name)).to.equal('');
+    });
+  });
+
 });
