@@ -7,8 +7,6 @@ angular.module('shortly.services', [])
       method: 'POST',
       url: '/api/links',
       data: data
-    }).then(function(res) {
-      return res.data;
     });
   };
 
