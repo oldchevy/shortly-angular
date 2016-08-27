@@ -64,4 +64,23 @@ describe('AuthController', function () {
     $httpBackend.flush();
     expect($window.localStorage.getItem('com.shortly')).to.equal(token);
   });
+
+  it('should have a checkUser method', function() {
+    expect($scope.checkUsername).to.be.a('function');
+  });
+
+  it('checkUser should return "Invalid Username" for a bad username', function() {
+    var tests = ['w', 'asdas2@', 'asakjshdbfjlasdhbfdasdasdasdasdasdasdasd', ''];
+    tests.forEach(function(name) {
+      expect($scope.checkUsername(name)).to.equal('Invalid Username');
+    });
+  });
+
+  it('should return a blank string for a valid Username', function() {
+    var tests = ['dffggw', 'sdfse1234', 'asdasd_12', 'aaaaaa_9929skskskkka'];
+    tests.forEach(function(name) {
+      expect($scope.checkUsername(name)).to.equal('');
+    });
+  });
+
 });
