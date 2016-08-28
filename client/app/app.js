@@ -18,6 +18,12 @@ angular.module('shortly', [
     .when('/links', {
       templateUrl: 'app/links/links.html',
       controller: 'LinksController'
+      // resolve: {
+      //   links: function() {
+      //     console.log('Resolving links');
+      //     return Links.getAll();
+      //   }
+      // }
     })
     .when('/shorten', {
       templateUrl: 'app/shorten/shorten.html',

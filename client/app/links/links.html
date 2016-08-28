@@ -1,9 +1,9 @@
-<div id='container' ng-contoller='LinksController'>
+<div id='container'>
 
   <input type='search' ng-model='data.searchTerm'>
 
   <div class='link' ng-repeat='link in data.links | filter:data.searchTerm | orderBy:"-visits"'>
-    <img src='assets/redirect_icon.png'/>
+    <img ng-src='{{ link.url+"/favicon.ico" || "assets/redirect_icon.png"}}'/>
     <div class='info'>
       <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
       <div class='title'>{{link.title}}</div>

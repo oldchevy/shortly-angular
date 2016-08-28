@@ -5,7 +5,7 @@ angular.module('shortly.services', [])
     return $http({
       method: 'POST',
       url: '/api/links',
-      data: data
+      data: data // {url: http://blah blah blah}
     });
   };
 
@@ -18,9 +18,17 @@ angular.module('shortly.services', [])
     });
   };
 
+  var getIcon = function(url) {
+    return $http({
+      method: 'GET',
+      url: url + '/favicon.ico'
+    });
+  };
+
   return {
     getAll: getAll,
-    addOne: addOne
+    addOne: addOne,
+    getIcon: getIcon
   };
 })
 .factory('Auth', function ($http, $location, $window) {

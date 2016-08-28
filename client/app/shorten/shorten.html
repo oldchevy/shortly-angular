@@ -1,8 +1,9 @@
-<div id='container' ng-controller='ShortenController'>
+<div id='creator' ng-controller='ShortenController'>
   <form>
     <input ng-class='{error: checkUrl(newLink), clean: !checkUrl(newLink)}' ng-model='newLink'/>
-    <button ng-click='addLink(newLink)'>Submit</button>    
+    <button ng-disabled='checkUrl(newLink)' ng-click='addLink(newLink)'>Submit</button>    
   </form>
+  <img ng-if='loading' src="../assets/spiffygif_46x46.gif" class='spinner'/>  
 
   <div>{{ checkUrl(newLink) }}</div>
 

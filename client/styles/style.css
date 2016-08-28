@@ -67,6 +67,7 @@ h1 {
 .link img {
   float: left;
   margin: 0 5px;
+  height: 20px;
 }
 
 .link .visits {
@@ -139,7 +140,7 @@ input[type=url]:focus {
   height: 46px;
   margin-bottom: 5px;
   padding: 10px;
-  display: none;
+  float: right;
 }
 
 .creator .message {

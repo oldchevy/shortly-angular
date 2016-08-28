@@ -52,8 +52,8 @@ describe('ShortenController', function () {
     expect($scope.checkUrl).to.be.a('function');
   });
 
-  it('checkUrl should return "Invalid Username" for a bad username', function() {
-    var tests = ['h', 'http://www.google.', '', 'mailto://asdffei@gmail.com'];
+  it('checkUrl should return "Invalid URL" for a bad username', function() {
+    var tests = ['h', 'http://www.google.', 'mailto://asdffei@gmail.com'];
     tests.forEach(function(name) {
       expect($scope.checkUrl(name)).to.equal('Invalid URL');
     });
